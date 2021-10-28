@@ -1,0 +1,49 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerBehaviour : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.D))
+        {
+            Vector3 vector = gameObject.transform.position;
+            vector.x += 0.01f;
+            gameObject.transform.position = vector;
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            Vector3 vector = gameObject.transform.position;
+            vector.x -= 0.01f;
+            gameObject.transform.position = vector;
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            Vector3 vector = gameObject.transform.position;
+            vector.z -= 0.01f;
+            gameObject.transform.position = vector;
+        }
+        else if (Input.GetKey(KeyCode.W))
+        {
+            Vector3 vector = gameObject.transform.position;
+            vector.z += 0.01f;
+            gameObject.transform.position = vector;
+        }
+
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        print("It works!");
+    }
+
+}
